@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+    </script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col-6">
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="entry.182343799">問題1</label>
+                    <input id="question1" name="entry.182343799" type="text" list="browsers" class="form-control" placeholder="Default input" >
+                    <datalist id="browsers">
+                        <option value="柏余"></option>
+                        <option value="勻然"></option>
+                        <option value="欣怡"></option>
+                        <option value="鼎謙"></option>
+                        <option value="斐瑜"></option>
+                        <option value="孝國"></option>
+                        <option value="瑜珊"></option>
+                      </datalist>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="inputDefault">問題2</label>
+                    <input id="question2" name="entry.1078191938" type="text" class="form-control" placeholder="Default input" >
+                </div>
+                <button id="readySubmit">確認</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var CheckInputAndSubmit=function(){
+            let readySubmit = document.getElementById('readySubmit');
+            
+
+
+            readySubmit.addEventListener('click',function(){
+                let question1 = document.getElementById('question1');
+                let question2 = document.getElementById('question2');
+                let url = 'https://docs.google.com/forms/d/e/1FAIpQLScmgExBv0Hvtjapi-VvnwgP4ju6qlrcEkWMwZZrwcMDm_XMDQ/viewform?entry.182343799='+question1.value+'&entry.1078191938='+question2.value;
+                window.location.replace(url);
+            });
+       };
+
+        window.addEventListener('load',function(){
+            CheckInputAndSubmit();
+
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>
